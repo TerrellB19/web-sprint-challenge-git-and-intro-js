@@ -266,12 +266,9 @@ Use removeArtist to do the following:
 
 function removeArtist(array, index) {
   let map1 = array.map(array => array)
-  let artistGone = [];
+  map1.splice(index, 1);
   
-  map1.splice(index, 1)
-  artistGone.push(map1);
-  return artistGone ;
-
+  return map1;
 }
 console.log('task 5:', removeArtist(artists, 0))
 
@@ -339,21 +336,17 @@ Use artistInfo to do the following:
 🌟 EXAMPLE: Invoking artistInfo(artists, 'Frida Kahlo') will return: 
   "Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."
 */
+ 
 
-function artistInfo(array, artistName){
-  let map1 = array.map(array => array);
-  
-  let artistBio = [];
+function artistInfo(array, artistName){ 
+const artistMap = array.map(array => array)
   for (let i = 0; i < array.length; i++){
-    if(artistName = map1[i].name){
-      artistBio.push(map1.bio)
-      return artistBio
-    } 
-    
-  } 
-
+    if (array[i].includes(artistName) || array[i].includes(artistName)){
+       artistMap.push(array[i]);
+      }
+} return artistMap;
 }
-console.log('task 8:', artistInfo(artists, 'Terrell Booker'))
+//console.log(artistInfo(artists, 'Frida Kahlo'))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -366,10 +359,17 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/){
-  /*Your Code Here*/
+function artistByCountry(array, nationalityString){
+  let filteredCountry = [];
+ /* 
+  for (let i = 0; i < array.length; i++){
+    if (array[i].includes('Red') || array[i].includes('Green')){
+       filteredCountry.push(array[i]);
+      }
+    return filteredCountry.name
+  }
+} console.log(artistByCountry(artists, 'Spanish')) */
 }
-
 
 
 /* ***** END OF TASKS ***** */
@@ -393,3 +393,24 @@ module.exports = {
   artistInfo,
   artistByCountry
 }
+
+
+
+
+
+
+
+const apples = ['Green apples', 'Yellow apples', 'Fiji', 'Granny Smith',
+'Gala', 'Red Delicious', 'Honeycrisp', 'Golden Delicious', 'McIntosh',
+ 'Pink Lady', 'Red Apple', 'Braeburn'];
+
+ ;
+  function test2 (array){
+  const appleFiltered = []
+  for (let i = 0; i < array.length; i++){
+    if (array[i].includes('Red') || array[i].includes('Green')){
+       appleFiltered.push(array[i]);
+      }
+} return appleFiltered;
+  }
+console.log('task 1', test2(apples))
