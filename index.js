@@ -233,7 +233,7 @@ Use getArtistByIndex to do the following:
 
 function getArtistByIndex(array, index) {
   return `the artist at index ${index} is ${array[index].name}`
-}
+} 
 console.log('task 3:', getArtistByIndex(artists, 7));
 
 
@@ -246,15 +246,14 @@ Use listOfNames to do the following:
 */
 
 function listOfNames(myArray){ 
-  const spreadArray = myArray.map(obj => myArray.name)
-  
-
-
+  let map1 = myArray.map(myArray => myArray)
+ 
+  let newNames = [];
   for (let i = 0; i < myArray.length; i++){
-    return spreadArray[i];
-}
-}
- console.log(listOfNames(artists));
+    newNames.push(map1[i].name) 
+    } return newNames 
+  }
+console.log('task 4:', listOfNames(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
@@ -266,10 +265,15 @@ Use removeArtist to do the following:
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
 function removeArtist(array, index) {
-  /*Your Code Here*/
+  let map1 = array.map(array => array)
+  let artistGone = [];
+  
+  //map1.splice(index, 1)
+  artistGone.push(map1);
+  return artistGone ;
+
 }
-
-
+console.log(removeArtist(artists, 0))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -287,9 +291,20 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
+function addArtist(array, nameString, yearsString, genreString, nationalityString, bioString, ) {
+  let map1 = array.map(array => array)
+  map1.push({ 
+    name: nameString, 
+    years: yearsString,
+    genre: genreString, 
+    nationality: nationalityString,
+    bio: bioString
+  }
+) 
+let newArtist = [];
+newArtist.push(map1)
+return map1
+} console.log('task 6:', addArtist(artists, 'Terrell Booker', '2000 - current day', 'Web Design', 'American', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non quam a magna porttitor pellentesque ullamcorper non turpis.'))
 
 
 
@@ -301,10 +316,17 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(array) {
+ let map1 = array.map(array => array)
+  let artistAbove100 = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].paintings > 100){
+      artistAbove100.push(map1[i].name)
+    }
+  }
+return artistAbove100
 }
-
+ console.log('task 7:', lotsOfArt(artists))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
