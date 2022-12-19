@@ -339,16 +339,17 @@ Use artistInfo to do the following:
  
 
 function artistInfo(artists, string){ 
-  const artistsFiltered = artists.map(artists => artists.bio)
+  
+  for (let i = 0; i <= artists.length; i++){
+    if (artists[i].name === string){
+      return artists[i].bio
+    }
+    }
+  }
+     
 
-  for (let i = 0; i < artists.length; i++){
-    if (artists.includes(string)){
-       artistsFiltered.push(array[i]);
-      }
-} return artistsFiltered;
-}
 
-console.log(artistInfo(artists, 'Frida Kahlo'))
+console.log(artistInfo(artists, 'Vasiliy Kandinskiy'))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -362,16 +363,16 @@ Use artistByCountry to do the following:
 */
 
 function artistByCountry(array, nationalityString){
-  let filteredCountry = [];
- /* 
-  for (let i = 0; i < array.length; i++){
-    if (array[i].includes('Red') || array[i].includes('Green')){
-       filteredCountry.push(array[i]);
+  let map1 = array.map(array => array);
+  let filteredArtist = [];
+
+  for(let i = 0; i < array.length; i++){
+    if(array[i].nationality ==  nationalityString){
+      filteredArtist.push(array[i].name)
       }
-    return filteredCountry.name
+    } return filteredArtist
   }
-} console.log(artistByCountry(artists, 'Spanish')) */
-}
+ console.log('task 9', artistByCountry(artists, 'Spanish')) 
 
 
 /* ***** END OF TASKS ***** */
