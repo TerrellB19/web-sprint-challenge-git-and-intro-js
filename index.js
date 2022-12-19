@@ -338,15 +338,17 @@ Use artistInfo to do the following:
 */
  
 
-function artistInfo(array, artistName){ 
-const artistMap = array.map(array => array)
-  for (let i = 0; i < array.length; i++){
-    if (array[i].includes(artistName) || array[i].includes(artistName)){
-       artistMap.push(array[i]);
+function artistInfo(artists, string){ 
+  const artistsFiltered = artists.map(artists => artists.bio)
+
+  for (let i = 0; i < artists.length; i++){
+    if (artists.includes(string)){
+       artistsFiltered.push(array[i]);
       }
-} return artistMap;
+} return artistsFiltered;
 }
-//console.log(artistInfo(artists, 'Frida Kahlo'))
+
+console.log(artistInfo(artists, 'Frida Kahlo'))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -393,24 +395,3 @@ module.exports = {
   artistInfo,
   artistByCountry
 }
-
-
-
-
-
-
-
-const apples = ['Green apples', 'Yellow apples', 'Fiji', 'Granny Smith',
-'Gala', 'Red Delicious', 'Honeycrisp', 'Golden Delicious', 'McIntosh',
- 'Pink Lady', 'Red Apple', 'Braeburn'];
-
- ;
-  function test2 (array){
-  const appleFiltered = []
-  for (let i = 0; i < array.length; i++){
-    if (array[i].includes('Red') || array[i].includes('Green')){
-       appleFiltered.push(array[i]);
-      }
-} return appleFiltered;
-  }
-console.log('task 1', test2(apples))
